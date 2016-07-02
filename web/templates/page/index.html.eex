@@ -1,36 +1,16 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
-</div>
-
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
+<div class="row">
+  <div class="col-md-12 alert alert-info">
+    Hello, <span id="User"><%= @conn.params["user"] %></span>!
   </div>
-
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
+  <div class="col-md-8">
+    <h2>Messages</h2>
+    <ul id="MessageList" class="list-unstyled" style="height: 300px; border: 1px solid #ccc; overflow-y: auto; padding: 20px"></ul>
+    <input type="text" id="NewMessage" placeholder="Type and press enter..." class="form-control">
+  </div>
+  <div  class="col-md-4">
+    <h2>Who’s Online</h2>
+    <ul id="UserList" class="list-unstyled">
+      <li>Loading online users...</li>
     </ul>
   </div>
 </div>

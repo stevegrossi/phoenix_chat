@@ -14,6 +14,7 @@ defmodule PhoenixChat do
       supervisor(PhoenixChat.Endpoint, []),
       # Start your own worker by calling: PhoenixChat.Worker.start_link(arg1, arg2, arg3)
       # worker(PhoenixChat.Worker, [arg1, arg2, arg3]),
+      supervisor(PhoenixChat.Presence, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

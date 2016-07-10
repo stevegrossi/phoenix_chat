@@ -14,4 +14,13 @@ defmodule PhoenixChat.RoomChannel do
     push socket, "presence_state", Presence.list(socket)
     {:noreply, socket}
   end
+
+  def handle_in("new:message", message, socket) do
+    broadcast! socket, "new:message", %{
+      user: socket.assigns.user,
+      body: message,
+      timestamp: :os.system_time(:milli_seconds)
+    }
+    {:noreply, socket}
+  end
 end

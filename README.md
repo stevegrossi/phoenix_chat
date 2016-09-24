@@ -16,6 +16,7 @@ Requires Erlang and Elixir.
 $ git clone git@github.com:stevegrossi/phoenix_chat.git
 $ cd phoenix_chat
 $ mix deps.get
+$ npm install
 $ mix ecto.create
 $ mix phoenix.server
 ```
